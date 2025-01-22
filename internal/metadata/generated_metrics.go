@@ -22,7 +22,7 @@ type metricPhpfpmAcceptedConnections struct {
 func (m *metricPhpfpmAcceptedConnections) init() {
 	m.data.SetName("phpfpm.accepted_connections")
 	m.data.SetDescription("The number of requests accepted by the pool")
-	m.data.SetUnit("{connections}")
+	m.data.SetUnit("1")
 	m.data.SetEmptySum()
 	m.data.Sum().SetIsMonotonic(true)
 	m.data.Sum().SetAggregationTemporality(pmetric.AggregationTemporalityCumulative)
@@ -73,7 +73,7 @@ type metricPhpfpmActiveProcesses struct {
 func (m *metricPhpfpmActiveProcesses) init() {
 	m.data.SetName("phpfpm.active_processes")
 	m.data.SetDescription("The number of active processes")
-	m.data.SetUnit("{processes}")
+	m.data.SetUnit("1")
 	m.data.SetEmptyGauge()
 }
 
@@ -122,7 +122,7 @@ type metricPhpfpmIdleProcesses struct {
 func (m *metricPhpfpmIdleProcesses) init() {
 	m.data.SetName("phpfpm.idle_processes")
 	m.data.SetDescription("The The number of idle processes")
-	m.data.SetUnit("{processes}")
+	m.data.SetUnit("1")
 	m.data.SetEmptyGauge()
 }
 
@@ -171,7 +171,7 @@ type metricPhpfpmListenQueue struct {
 func (m *metricPhpfpmListenQueue) init() {
 	m.data.SetName("phpfpm.listen_queue")
 	m.data.SetDescription("The number of requests in the queue of pending connections")
-	m.data.SetUnit("{requests}")
+	m.data.SetUnit("1")
 	m.data.SetEmptyGauge()
 }
 
@@ -220,7 +220,7 @@ type metricPhpfpmListenQueueLength struct {
 func (m *metricPhpfpmListenQueueLength) init() {
 	m.data.SetName("phpfpm.listen_queue_length")
 	m.data.SetDescription("The size of the socket queue of pending connections")
-	m.data.SetUnit("{requests}")
+	m.data.SetUnit("1")
 	m.data.SetEmptyGauge()
 }
 
@@ -269,7 +269,7 @@ type metricPhpfpmMaxActiveProcesses struct {
 func (m *metricPhpfpmMaxActiveProcesses) init() {
 	m.data.SetName("phpfpm.max_active_processes")
 	m.data.SetDescription("The maximum number of requests in the queue of pending connections since FPM has started")
-	m.data.SetUnit("{processes}")
+	m.data.SetUnit("1")
 	m.data.SetEmptySum()
 	m.data.Sum().SetIsMonotonic(true)
 	m.data.Sum().SetAggregationTemporality(pmetric.AggregationTemporalityCumulative)
@@ -320,7 +320,7 @@ type metricPhpfpmMaxChildrenReached struct {
 func (m *metricPhpfpmMaxChildrenReached) init() {
 	m.data.SetName("phpfpm.max_children_reached")
 	m.data.SetDescription("The number of times, the process limit has been reached, when pm tries to start more children (works only for pm 'dynamic' and 'ondemand')")
-	m.data.SetUnit("{processes}")
+	m.data.SetUnit("1")
 	m.data.SetEmptySum()
 	m.data.Sum().SetIsMonotonic(true)
 	m.data.Sum().SetAggregationTemporality(pmetric.AggregationTemporalityCumulative)
@@ -371,7 +371,7 @@ type metricPhpfpmMaxListenQueue struct {
 func (m *metricPhpfpmMaxListenQueue) init() {
 	m.data.SetName("phpfpm.max_listen_queue")
 	m.data.SetDescription("The maximum number of requests in the queue of pending connections since FPM has started")
-	m.data.SetUnit("{requests}")
+	m.data.SetUnit("1")
 	m.data.SetEmptySum()
 	m.data.Sum().SetIsMonotonic(true)
 	m.data.Sum().SetAggregationTemporality(pmetric.AggregationTemporalityCumulative)
@@ -575,7 +575,7 @@ type metricPhpfpmProcessRequests struct {
 func (m *metricPhpfpmProcessRequests) init() {
 	m.data.SetName("phpfpm.process.requests")
 	m.data.SetDescription("The number of requests the process has served")
-	m.data.SetUnit("{requests}")
+	m.data.SetUnit("1")
 	m.data.SetEmptySum()
 	m.data.Sum().SetIsMonotonic(true)
 	m.data.Sum().SetAggregationTemporality(pmetric.AggregationTemporalityCumulative)
@@ -628,7 +628,7 @@ type metricPhpfpmProcessState struct {
 func (m *metricPhpfpmProcessState) init() {
 	m.data.SetName("phpfpm.process.state")
 	m.data.SetDescription("The state of the process (Idle, Running, ...)")
-	m.data.SetUnit("{processes}")
+	m.data.SetUnit("1")
 	m.data.SetEmptyGauge()
 	m.data.Gauge().DataPoints().EnsureCapacity(m.capacity)
 }
@@ -680,7 +680,7 @@ type metricPhpfpmScrapeFailures struct {
 func (m *metricPhpfpmScrapeFailures) init() {
 	m.data.SetName("phpfpm.scrape_failures")
 	m.data.SetDescription("The number of failures scraping from PHP-FPM")
-	m.data.SetUnit("{requests}")
+	m.data.SetUnit("1")
 	m.data.SetEmptySum()
 	m.data.Sum().SetIsMonotonic(true)
 	m.data.Sum().SetAggregationTemporality(pmetric.AggregationTemporalityCumulative)
@@ -731,7 +731,7 @@ type metricPhpfpmSlowRequests struct {
 func (m *metricPhpfpmSlowRequests) init() {
 	m.data.SetName("phpfpm.slow_requests")
 	m.data.SetDescription("The number of requests that exceeded your 'request_slowlog_timeout' value")
-	m.data.SetUnit("{requests}")
+	m.data.SetUnit("1")
 	m.data.SetEmptySum()
 	m.data.Sum().SetIsMonotonic(true)
 	m.data.Sum().SetAggregationTemporality(pmetric.AggregationTemporalityCumulative)
@@ -833,7 +833,7 @@ type metricPhpfpmTotalProcesses struct {
 func (m *metricPhpfpmTotalProcesses) init() {
 	m.data.SetName("phpfpm.total_processes")
 	m.data.SetDescription("The number of idle + active processes")
-	m.data.SetUnit("{processes}")
+	m.data.SetUnit("1")
 	m.data.SetEmptyGauge()
 }
 
