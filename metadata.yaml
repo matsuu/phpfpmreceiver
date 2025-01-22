@@ -29,7 +29,7 @@ metrics:
   phpfpm.accepted_connections:
     enabled: true
     description: The number of requests accepted by the pool
-    unit: "{connections}"
+    unit: "1"
     sum:
       value_type: int
       monotonic: true
@@ -38,35 +38,35 @@ metrics:
   phpfpm.active_processes:
     enabled: true
     description: The number of active processes
-    unit: "{processes}"
+    unit: "1"
     gauge:
       value_type: int
     attributes: []
   phpfpm.idle_processes:
     enabled: true
     description: The The number of idle processes
-    unit: "{processes}"
+    unit: "1"
     gauge:
       value_type: int
     attributes: []
   phpfpm.listen_queue:
     enabled: true
     description: The number of requests in the queue of pending connections
-    unit: "{requests}"
+    unit: "1"
     gauge:
       value_type: int
     attributes: []
   phpfpm.listen_queue_length:
     enabled: true
     description: The size of the socket queue of pending connections
-    unit: "{requests}"
+    unit: "1"
     gauge:
       value_type: int
     attributes: []
   phpfpm.max_active_processes:
     enabled: true
     description: The maximum number of requests in the queue of pending connections since FPM has started
-    unit: "{processes}"
+    unit: "1"
     sum:
       value_type: int
       monotonic: true
@@ -75,7 +75,7 @@ metrics:
   phpfpm.max_children_reached:
     enabled: true
     description: The number of times, the process limit has been reached, when pm tries to start more children (works only for pm 'dynamic' and 'ondemand')
-    unit: "{processes}"
+    unit: "1"
     sum:
       value_type: int
       monotonic: true
@@ -84,7 +84,7 @@ metrics:
   phpfpm.max_listen_queue:
     enabled: true
     description: The maximum number of requests in the queue of pending connections since FPM has started
-    unit: "{requests}"
+    unit: "1"
     sum:
       value_type: int
       monotonic: true
@@ -114,7 +114,7 @@ metrics:
   phpfpm.process.requests:
     enabled: true
     description: The number of requests the process has served
-    unit: "{requests}"
+    unit: "1"
     sum:
       value_type: int
       monotonic: true
@@ -123,14 +123,14 @@ metrics:
   phpfpm.process.state:
     enabled: true
     description: The state of the process (Idle, Running, ...)
-    unit: "{processes}"
+    unit: "1"
     gauge:
       value_type: int
     attributes: [child, state]
   phpfpm.scrape_failures:
     enabled: true
     description: The number of failures scraping from PHP-FPM
-    unit: "{requests}"
+    unit: "1"
     sum:
       value_type: int
       monotonic: true
@@ -139,7 +139,7 @@ metrics:
   phpfpm.slow_requests:
     enabled: true
     description: The number of requests that exceeded your 'request_slowlog_timeout' value
-    unit: "{requests}"
+    unit: "1"
     sum:
       value_type: int
       monotonic: true
@@ -157,7 +157,7 @@ metrics:
   phpfpm.total_processes:
     enabled: true
     description: The number of idle + active processes
-    unit: "{processes}"
+    unit: "1"
     gauge:
       value_type: int
     attributes: []
