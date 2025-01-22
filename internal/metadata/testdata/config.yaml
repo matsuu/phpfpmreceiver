@@ -1,0 +1,103 @@
+default:
+all_set:
+  metrics:
+    phpfpm.accepted_connections:
+      enabled: true
+    phpfpm.active_processes:
+      enabled: true
+    phpfpm.idle_processes:
+      enabled: true
+    phpfpm.listen_queue:
+      enabled: true
+    phpfpm.listen_queue_length:
+      enabled: true
+    phpfpm.max_active_processes:
+      enabled: true
+    phpfpm.max_children_reached:
+      enabled: true
+    phpfpm.max_listen_queue:
+      enabled: true
+    phpfpm.process.last_request_cpu:
+      enabled: true
+    phpfpm.process.last_request_memory:
+      enabled: true
+    phpfpm.process.request_duration:
+      enabled: true
+    phpfpm.process.requests:
+      enabled: true
+    phpfpm.process.state:
+      enabled: true
+    phpfpm.scrape_failures:
+      enabled: true
+    phpfpm.slow_requests:
+      enabled: true
+    phpfpm.start_since:
+      enabled: true
+    phpfpm.total_processes:
+      enabled: true
+  resource_attributes:
+    phpfpm.pool_name:
+      enabled: true
+    phpfpm.scrape_uri:
+      enabled: true
+none_set:
+  metrics:
+    phpfpm.accepted_connections:
+      enabled: false
+    phpfpm.active_processes:
+      enabled: false
+    phpfpm.idle_processes:
+      enabled: false
+    phpfpm.listen_queue:
+      enabled: false
+    phpfpm.listen_queue_length:
+      enabled: false
+    phpfpm.max_active_processes:
+      enabled: false
+    phpfpm.max_children_reached:
+      enabled: false
+    phpfpm.max_listen_queue:
+      enabled: false
+    phpfpm.process.last_request_cpu:
+      enabled: false
+    phpfpm.process.last_request_memory:
+      enabled: false
+    phpfpm.process.request_duration:
+      enabled: false
+    phpfpm.process.requests:
+      enabled: false
+    phpfpm.process.state:
+      enabled: false
+    phpfpm.scrape_failures:
+      enabled: false
+    phpfpm.slow_requests:
+      enabled: false
+    phpfpm.start_since:
+      enabled: false
+    phpfpm.total_processes:
+      enabled: false
+  resource_attributes:
+    phpfpm.pool_name:
+      enabled: false
+    phpfpm.scrape_uri:
+      enabled: false
+filter_set_include:
+  resource_attributes:
+    phpfpm.pool_name:
+      enabled: true
+      metrics_include:
+        - regexp: ".*"
+    phpfpm.scrape_uri:
+      enabled: true
+      metrics_include:
+        - regexp: ".*"
+filter_set_exclude:
+  resource_attributes:
+    phpfpm.pool_name:
+      enabled: true
+      metrics_exclude:
+        - strict: "phpfpm.pool_name-val"
+    phpfpm.scrape_uri:
+      enabled: true
+      metrics_exclude:
+        - strict: "phpfpm.scrape_uri-val"

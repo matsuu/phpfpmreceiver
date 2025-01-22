@@ -1,0 +1,163 @@
+type: phpfpm
+
+status:
+  class: receiver
+  stability:
+    development: [metrics]
+  codeowners:
+    active: [matsuu]
+
+resource_attributes:
+  phpfpm.pool_name:
+    enabled: true
+    description: pool name
+    type: string
+  phpfpm.scrape_uri:
+    enabled: true
+    description: scrape URI
+    type: string
+
+attributes:
+  child:
+    description: process id of the worker process
+    type: int
+  state:
+    description: state of the process
+    type: string
+
+metrics:
+  phpfpm.accepted_connections:
+    enabled: true
+    description: The number of requests accepted by the pool
+    unit: "{connections}"
+    sum:
+      value_type: int
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: []
+  phpfpm.active_processes:
+    enabled: true
+    description: The number of active processes
+    unit: "{processes}"
+    gauge:
+      value_type: int
+    attributes: []
+  phpfpm.idle_processes:
+    enabled: true
+    description: The The number of idle processes
+    unit: "{processes}"
+    gauge:
+      value_type: int
+    attributes: []
+  phpfpm.listen_queue:
+    enabled: true
+    description: The number of requests in the queue of pending connections
+    unit: "{requests}"
+    gauge:
+      value_type: int
+    attributes: []
+  phpfpm.listen_queue_length:
+    enabled: true
+    description: The size of the socket queue of pending connections
+    unit: "{requests}"
+    gauge:
+      value_type: int
+    attributes: []
+  phpfpm.max_active_processes:
+    enabled: true
+    description: The maximum number of requests in the queue of pending connections since FPM has started
+    unit: "{processes}"
+    sum:
+      value_type: int
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: []
+  phpfpm.max_children_reached:
+    enabled: true
+    description: The number of times, the process limit has been reached, when pm tries to start more children (works only for pm 'dynamic' and 'ondemand')
+    unit: "{processes}"
+    sum:
+      value_type: int
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: []
+  phpfpm.max_listen_queue:
+    enabled: true
+    description: The maximum number of requests in the queue of pending connections since FPM has started
+    unit: "{requests}"
+    sum:
+      value_type: int
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: []
+  phpfpm.process.last_request_cpu:
+    enabled: true
+    description: The %cpu the last request consumed
+    unit: "%"
+    gauge:
+      value_type: double
+    attributes: [child]
+  phpfpm.process.last_request_memory:
+    enabled: true
+    description: The max amount of memory the last request consumed
+    unit: By
+    gauge:
+      value_type: int
+    attributes: [child]
+  phpfpm.process.request_duration:
+    enabled: true
+    description: The duration in microseconds of the requests
+    unit: us
+    gauge:
+      value_type: int
+    attributes: [child]
+  phpfpm.process.requests:
+    enabled: true
+    description: The number of requests the process has served
+    unit: "{requests}"
+    sum:
+      value_type: int
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: [child]
+  phpfpm.process.state:
+    enabled: true
+    description: The state of the process (Idle, Running, ...)
+    unit: "{processes}"
+    gauge:
+      value_type: int
+    attributes: [child, state]
+  phpfpm.scrape_failures:
+    enabled: true
+    description: The number of failures scraping from PHP-FPM
+    unit: "{requests}"
+    sum:
+      value_type: int
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: []
+  phpfpm.slow_requests:
+    enabled: true
+    description: The number of requests that exceeded your 'request_slowlog_timeout' value
+    unit: "{requests}"
+    sum:
+      value_type: int
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: []
+  phpfpm.start_since:
+    enabled: true
+    description: The number of seconds since FPM has started
+    unit: s
+    sum:
+      value_type: int
+      monotonic: true
+      aggregation_temporality: cumulative
+    attributes: []
+  phpfpm.total_processes:
+    enabled: true
+    description: The number of idle + active processes
+    unit: "{processes}"
+    gauge:
+      value_type: int
+    attributes: []
