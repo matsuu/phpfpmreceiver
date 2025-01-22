@@ -60,6 +60,7 @@ func (r *phpfpmScraper) scrape(context.Context) (pmetric.Metrics, error) {
 		r.mb.RecordPhpfpmActiveProcessesDataPoint(now, pool.ActiveProcesses)
 		r.mb.RecordPhpfpmIdleProcessesDataPoint(now, pool.IdleProcesses)
 		r.mb.RecordPhpfpmListenQueueDataPoint(now, pool.ListenQueue)
+		r.mb.RecordPhpfpmListenQueueLengthDataPoint(now, pool.ListenQueueLength)
 		r.mb.RecordPhpfpmMaxActiveProcessesDataPoint(now, pool.MaxActiveProcesses)
 		r.mb.RecordPhpfpmMaxChildrenReachedDataPoint(now, pool.MaxChildrenReached)
 		r.mb.RecordPhpfpmMaxListenQueueDataPoint(now, pool.MaxListenQueue)
