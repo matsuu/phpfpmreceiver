@@ -18,7 +18,7 @@ The number of requests accepted by the pool
 
 | Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
 | ---- | ----------- | ---------- | ----------------------- | --------- |
-| {connections} | Sum | Int | Cumulative | true |
+| 1 | Sum | Int | Cumulative | true |
 
 ### phpfpm.active_processes
 
@@ -26,7 +26,7 @@ The number of active processes
 
 | Unit | Metric Type | Value Type |
 | ---- | ----------- | ---------- |
-| {processes} | Gauge | Int |
+| 1 | Gauge | Int |
 
 ### phpfpm.idle_processes
 
@@ -34,7 +34,7 @@ The The number of idle processes
 
 | Unit | Metric Type | Value Type |
 | ---- | ----------- | ---------- |
-| {processes} | Gauge | Int |
+| 1 | Gauge | Int |
 
 ### phpfpm.listen_queue
 
@@ -42,7 +42,7 @@ The number of requests in the queue of pending connections
 
 | Unit | Metric Type | Value Type |
 | ---- | ----------- | ---------- |
-| {requests} | Gauge | Int |
+| 1 | Gauge | Int |
 
 ### phpfpm.listen_queue_length
 
@@ -50,7 +50,7 @@ The size of the socket queue of pending connections
 
 | Unit | Metric Type | Value Type |
 | ---- | ----------- | ---------- |
-| {requests} | Gauge | Int |
+| 1 | Gauge | Int |
 
 ### phpfpm.max_active_processes
 
@@ -58,7 +58,7 @@ The maximum number of requests in the queue of pending connections since FPM has
 
 | Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
 | ---- | ----------- | ---------- | ----------------------- | --------- |
-| {processes} | Sum | Int | Cumulative | true |
+| 1 | Sum | Int | Cumulative | true |
 
 ### phpfpm.max_children_reached
 
@@ -66,7 +66,7 @@ The number of times, the process limit has been reached, when pm tries to start 
 
 | Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
 | ---- | ----------- | ---------- | ----------------------- | --------- |
-| {processes} | Sum | Int | Cumulative | true |
+| 1 | Sum | Int | Cumulative | true |
 
 ### phpfpm.max_listen_queue
 
@@ -74,7 +74,7 @@ The maximum number of requests in the queue of pending connections since FPM has
 
 | Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
 | ---- | ----------- | ---------- | ----------------------- | --------- |
-| {requests} | Sum | Int | Cumulative | true |
+| 1 | Sum | Int | Cumulative | true |
 
 ### phpfpm.process.last_request_cpu
 
@@ -124,7 +124,7 @@ The number of requests the process has served
 
 | Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
 | ---- | ----------- | ---------- | ----------------------- | --------- |
-| {requests} | Sum | Int | Cumulative | true |
+| 1 | Sum | Int | Cumulative | true |
 
 #### Attributes
 
@@ -138,7 +138,7 @@ The state of the process (Idle, Running, ...)
 
 | Unit | Metric Type | Value Type |
 | ---- | ----------- | ---------- |
-| {processes} | Gauge | Int |
+| 1 | Gauge | Int |
 
 #### Attributes
 
@@ -153,7 +153,7 @@ The number of failures scraping from PHP-FPM
 
 | Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
 | ---- | ----------- | ---------- | ----------------------- | --------- |
-| {requests} | Sum | Int | Cumulative | true |
+| 1 | Sum | Int | Cumulative | true |
 
 ### phpfpm.slow_requests
 
@@ -161,7 +161,7 @@ The number of requests that exceeded your 'request_slowlog_timeout' value
 
 | Unit | Metric Type | Value Type | Aggregation Temporality | Monotonic |
 | ---- | ----------- | ---------- | ----------------------- | --------- |
-| {requests} | Sum | Int | Cumulative | true |
+| 1 | Sum | Int | Cumulative | true |
 
 ### phpfpm.start_since
 
@@ -177,7 +177,7 @@ The number of idle + active processes
 
 | Unit | Metric Type | Value Type |
 | ---- | ----------- | ---------- |
-| {processes} | Gauge | Int |
+| 1 | Gauge | Int |
 
 ## Resource Attributes
 
